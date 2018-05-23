@@ -1,10 +1,10 @@
 {
-  "name": "codeages/upgrade-sdk",
-  "description": "upgrade sdk",
+  "name": "codeages/biz-cloud-app",
+  "description": "Biz Cloud App",
   "type": "library",
   "autoload": {
     "psr-4": {
-      "Codeages\\Biz\\UpgradeSdk\\": "src/"
+      "Codeages\\Biz\\CloudApp\\": "src/"
     }
   },
   "autoload-dev": {

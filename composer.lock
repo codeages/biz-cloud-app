@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "351814dc6f0b302618ca0889f230a723",
+    "content-hash": "e13f59860053022aecfccc77bfd1db39",
     "packages": [
         {
             "name": "codeages/biz-framework",

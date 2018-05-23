@@ -14,7 +14,7 @@
     bootstrap                   = "tests/bootstrap.php" >
 
     <php>
-        <env name="DB_NAME" value="biz-upgrade-sdk"/>
+        <env name="DB_NAME" value="biz-cloud-app"/>
         <env name="DB_HOST" value="127.0.0.1"/>
         <env name="DB_USER" value="root"/>
         <env name="DB_PORT" value="3306"/>
@@ -23,7 +23,7 @@
     </php>
 
     <testsuites>
-        <testsuite name="Upgrade Sdk Test Suite">
+        <testsuite name="Cloud App Test Suite">
             <directory>./tests</directory>
         </testsuite>
     </testsuites>

@@ -65,8 +65,8 @@ class ComposerStaticInit3e61ed4f97ae1e8bf6cbde1ec08aa522
         'C' => 
         array (
             'Cron\\' => 5,
-            'Codeages\\Biz\\UpgradeSdk\\' => 24,
             'Codeages\\Biz\\Framework\\' => 23,
+            'Codeages\\Biz\\CloudApp\\' => 22,
         ),
     );
 
@@ -169,13 +169,13 @@ class ComposerStaticInit3e61ed4f97ae1e8bf6cbde1ec08aa522
         array (
             0 => __DIR__ . '/..' . '/mtdowling/cron-expression/src/Cron',
         ),
-        'Codeages\\Biz\\UpgradeSdk\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/src',
-        ),
         'Codeages\\Biz\\Framework\\' => 
         array (
             0 => __DIR__ . '/..' . '/codeages/biz-framework/src',
+        ),
+        'Codeages\\Biz\\CloudApp\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/src',
         ),
     );
 

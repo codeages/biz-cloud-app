@@ -15,7 +15,7 @@ use Symfony\Component\Console\Application;
 
 $version = trim(file_get_contents(dirname(__DIR__).'/VERSION'));
 
-$application = new Application("Upgrade SDK", $version);
+$application = new Application("biz-cloud-app", $version);
 
 foreach ($biz['console.commands'] as $creatorFunc) {
     $application->add($creatorFunc());
