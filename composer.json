@@ -1,0 +1,22 @@
+{
+  "name": "codeages/upgrade-sdk",
+  "description": "upgrade sdk",
+  "type": "library",
+  "autoload": {
+    "psr-4": {
+      "Codeages\\Biz\\UpgradeSdk\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Tests\\": "tests/"
+    }
+  },
+  "require": {
+    "codeages/biz-framework": "^0.9"
+  },
+  "require-dev": {
+    "mockery/mockery": "0.9.9",
+    "phpunit/phpunit": "4.8.36"
+  }
+}

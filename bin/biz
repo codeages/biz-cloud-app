@@ -1,0 +1,24 @@
+#!/usr/bin/env php
+<?php
+error_reporting(E_ALL);
+set_time_limit(0);
+
+$autoloader = require dirname(__DIR__).'/composer_autoload.php';
+
+if (!$autoloader()) {
+    die('class autoloader not found.');
+}
+
+$biz = require __DIR__.'/../biz.php';
+
+use Symfony\Component\Console\Application;
+
+$version = trim(file_get_contents(dirname(__DIR__).'/VERSION'));
+
+$application = new Application("Upgrade SDK", $version);
+
+foreach ($biz['console.commands'] as $creatorFunc) {
+    $application->add($creatorFunc());
+}
+
+$application->run();
