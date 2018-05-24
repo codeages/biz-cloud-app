@@ -4,11 +4,8 @@ namespace Tests;
 
 use Codeages\Biz\Framework\Dao\ArrayStorage;
 use Codeages\Biz\Framework\Dao\Connection;
-use Codeages\Biz\Role\RoleServiceProvider;
-use Codeages\Biz\Org\OrgServiceProvider;
-use Codeages\Biz\User\UserServiceProvider;
+use Codeages\Biz\CloudApp\CloudAppServiceProvider;
 use Codeages\Biz\Framework\Provider\DoctrineServiceProvider;
-use Codeages\Biz\Framework\Provider\TokenServiceProvider;
 use Doctrine\Common\Collections\ArrayCollection;
 use PHPUnit\Framework\TestCase;
 use Codeages\Biz\Framework\Context\Biz;
@@ -84,10 +81,7 @@ class IntegrationTestCase extends TestCase
         $biz = new Biz($options);
         $biz['autoload.aliases']['Example'] = 'Tests\\Example';
         $biz->register(new DoctrineServiceProvider());
-        $biz->register(new RoleServiceProvider());
-        $biz->register(new UserServiceProvider());
-        $biz->register(new OrgServiceProvider());
-        $biz->register(new TokenServiceProvider());
+        $biz->register(new CloudAppServiceProvider());
 
         $cacheEnabled = getenv('CACHE_ENABLED');
 
