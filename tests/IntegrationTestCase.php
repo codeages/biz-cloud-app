@@ -6,12 +6,14 @@ use Codeages\Biz\Framework\Dao\ArrayStorage;
 use Codeages\Biz\Framework\Dao\Connection;
 use Codeages\Biz\CloudApp\CloudAppServiceProvider;
 use Codeages\Biz\Framework\Provider\DoctrineServiceProvider;
+use Codeages\Biz\Framework\Provider\QueueServiceProvider;
 use Doctrine\Common\Collections\ArrayCollection;
 use PHPUnit\Framework\TestCase;
 use Codeages\Biz\Framework\Context\Biz;
 use Codeages\Biz\Order\Subscriber\OrderSubscriber;
 use Monolog\Logger;
 use Monolog\Handler\TestHandler;
+use Codeages\Biz\Framework\Queue\Driver\DatabaseQueue;
 
 class IntegrationTestCase extends TestCase
 {
@@ -82,6 +84,11 @@ class IntegrationTestCase extends TestCase
         $biz['autoload.aliases']['Example'] = 'Tests\\Example';
         $biz->register(new DoctrineServiceProvider());
         $biz->register(new CloudAppServiceProvider());
+        $biz->register(new QueueServiceProvider());
+
+        $biz['queue.connection.database'] = function ($biz) {
+            return new DatabaseQueue('database', $biz);
+        };
 
         $cacheEnabled = getenv('CACHE_ENABLED');
 

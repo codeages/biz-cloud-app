@@ -4,9 +4,7 @@ namespace Codeages\Biz\CloudApp;
 
 use Pimple\Container;
 use Pimple\ServiceProviderInterface;
-use Codeages\Biz\Framework\Util\ArrayToolkit;
-use Codeages\Upgrade\Common\Util\UpgradeUtils;
-use Codeages\Upgrade\Common\Exception\AccessException;
+use Codeages\Biz\CloudApp\Client\EdusohoAppClient;
 
 class CloudAppServiceProvider implements ServiceProviderInterface
 {
@@ -14,9 +12,17 @@ class CloudAppServiceProvider implements ServiceProviderInterface
     {
     	$biz['autoload.aliases']['CloudApp'] = 'Codeages\Biz\CloudApp';
 
+    	$biz['console.commands'][] = function () use ($biz) {
+            return new \Codeages\Biz\CloudApp\Command\TableCommand($biz);
+        };
+
         $biz['biz_cloud_app.options'] = array(
         	'accessKey' => '',
         	'securitKey' => ''
         );
+
+    	$biz['biz_cloud_app.app_client'] = function () use ($biz) {
+            return new EdusohoAppClient($biz);
+        };
     }
 }

@@ -1,6 +1,7 @@
 <?php
 
 use Codeages\Biz\Framework\Context\Biz;
+use Codeages\Biz\Framework\Provider\QueueServiceProvider;
 
 $options = array(
     'db.options' => array(
@@ -25,6 +26,7 @@ $biz = new Biz($options);
 
 
 $biz->register(new \Codeages\Biz\CloudApp\CloudAppServiceProvider());
+$biz->register(new QueueServiceProvider());
 $biz->register(new \Codeages\Biz\Framework\Provider\DoctrineServiceProvider());
 
 

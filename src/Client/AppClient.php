@@ -75,24 +75,4 @@ interface AppClient
      *                )
      */
     public function checkUpgradePackages($appConditions);
-
-    /**
-     * 提交应用包升级／安装日志数据.
-     */
-    public function submitRunLog($log);
-
-    /**
-     * 下载应用包.
-     */
-    public function downloadPackage($packageId);
-
-    /**
-     * 检查是否有权限下载应用.
-     */
-    public function checkDownloadPackage($packageId);
-
-    /**
-     * 获得包信息.
-     */
-    public function getPackage($id);
 }
