@@ -46,6 +46,7 @@ class EdusohoAppClient implements AppClient
         $this->secretKey = empty($options['secretKey']) ? '' : $options['secretKey'];
         $this->host = $options['host'];
         $this->debug = empty($options['debug']) ? false : true;
+        $this->apiUrl = empty($options['apiUrl']) ? $this->apiUrl : $options['apiUrl'];
     }
 
     public function getApps()

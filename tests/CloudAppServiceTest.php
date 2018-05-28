@@ -15,14 +15,7 @@ class CloudAppServiceTest extends IntegrationTestCase
         );
         $this->biz['user'] = $currentUser;
 
-        $this->biz['biz_cloud_app.options'] = array(
-    		'accessKey' => 'V09v97N0cwtVidwAnpZCylBdwUm2O77J',
-            'secretKey' => '7gegn2hAyKvRX2rlrqXZMzdiuAliHs1P',
-            'apiUrl' => null,
-            'debug' => true,
-            'host' => 'www.esdev.com',
-            'mainAppCode' => 'MAIN',
-    	);
+        $this->biz['biz_cloud_app.options'] = require 'config.php'; 
     }
 
     public function testFindCloudApps()
